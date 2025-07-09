@@ -30,7 +30,7 @@ jobs:
 
       # Generate static files
       - name: Generate
-        run: hexo generate
+        run: npx hexo generate
 
       # Deploy to your public repository (aw168.github.io)
       - name: Deploy
