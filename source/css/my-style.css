@@ -28,8 +28,6 @@
 [data-theme='dark'] #page-header::before { background-color: rgba(0, 0, 0, 0.4); }
 
 /* --- 自定义内容区域 --- */
-/* --- 自定义内容区域 (最终紧凑版) --- */
-
 .author-info-box {
   position: relative;
   z-index: 3;
@@ -40,11 +38,11 @@
 
 /* 头像样式 */
 .author-avatar img {
-  width: 90px; /* 稍微缩小头像 */
+  width: 90px;
   height: 90px;
   border-radius: 50%;
   border: 2px solid rgba(255, 255, 255, 0.7);
-  margin-bottom: 1px; /* 【关键修改】减小头像与下方标题的距离 */
+  margin-bottom: 1px;
 }
 .author-avatar img:hover {
   transform: rotate(360deg);
@@ -52,17 +50,17 @@
 
 /* 名字样式 */
 .author-name {
-  font-size: 1.5rem; /* 稍微缩小字体 */
+  font-size: 1.5rem;
   font-weight: bold;
-  margin: 0 0 1px 0; /* 【关键修改】减小上下边距 */
+  margin: 0 0 1px 0;
   color: white !important;
 }
 
 /* 描述文字样式 */
 .author-description {
-  font-size: 1rem; /* 稍微缩小字体 */
+  font-size: 1rem;
   margin-top: 0;
-  margin-bottom: 1px; /* 【关键修改】减小与下方图标的距离 */
+  margin-bottom: 1px;
   color: white !important;
   opacity: 0.9;
 }
@@ -70,12 +68,12 @@
 /* 社交图标样式 */
 .additional-links.hero-social-icons {
   display: flex;
-  gap: 18px; /* 图标左右间距 */
+  gap: 18px;
   justify-content: center;
 }
 .additional-links.hero-social-icons a {
   display: flex; justify-content: center; align-items: center;
-  width: 38px; height: 38px; /* 稍微缩小图标背景 */
+  width: 38px; height: 38px;
   background-color: rgb(76, 62, 62);
   backdrop-filter: blur(5px);
   border-radius: 50%;
@@ -86,7 +84,7 @@
   transform: translateY(-3px);
 }
 .additional-links.hero-social-icons i {
-  font-size: 18px; /* 稍微缩小图标 */
+  font-size: 18px;
   color: rgb(232, 243, 16);
 }
 
@@ -99,26 +97,29 @@
 html { scroll-behavior: smooth; }
 #content-inner { scroll-margin-top: 20px; }
 
-/* ================================== */
-/* 【优化一】JS驱动的绝美雪花特效     */
-/* ================================== */
+/* --- JS驱动的绝美雪花特效 --- */
 #particles-js {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1; /* 让雪花在背景图之上，但在遮罩层和内容之下 */
+  z-index: 1;
 }
 
-/* --- 优化：恢复文章内容的文字选中功能 --- */
-
-/* 选中文章的主体内容区域 */
-.article-entry {
-  /* * user-select 是控制用户能否选中文字的属性。
-   * 'text' 或 'auto' 都能恢复正常的选中功能。
-   * !important 用来确保我们的规则优先级最高，能覆盖掉主题自带的设置。
-   */
+/* --- 【最终修正】恢复文章内容的文字选中功能 --- */
+.post-content p,
+.post-content span,
+.post-content li,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6,
+.post-content table,
+.post-content pre,
+.post-content code {
   user-select: text !important;
-  -webkit-user-select: text !important; /* 兼容老版本的 Chrome/Safari 浏览器 */
+  -webkit-user-select: text !important;
 }
