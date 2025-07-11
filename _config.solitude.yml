@@ -221,7 +221,7 @@ aside:
     runtimeenable: true
     # Format: inplace-MM-dd hh-mm-ss
     # 格式: inplace-MM-dd hh-mm-ss
-    runtime: "2023-04-20 00:00:00"
+    runtime: "2025-01-01 00:00:00"
   # --------------------------- 网站信息 end ---------------------------
 # --------------------------- 首页顶部 end ---------------------------
 
@@ -259,11 +259,11 @@ post:
     top_cover: true
     # Default image when no cover is set
     # 未设置封面时的默认图片
-    cover: 
+    cover: https://awtc.pp.ua/11.png
       # -  # 默认图片 / default cover
     # Location
     # 位置
-    locate: China,hubei
+    locate: China,anywhere
     # Copyright
     # 版权
     copyright:
@@ -290,7 +290,7 @@ post:
     updated: true
     # Location
     # 位置
-    locate: false
+    locate: ture
     # Number of words
     # 字数
     wordcount: true
@@ -366,10 +366,10 @@ theme_color:
 display_mode:
   # auto: automatic switching(Recognize the current theme mode of the device) / dark: dark mode / light: light mode
   # auto: 自动切换（识别设备当前主题模式） / dark: 深色模式 / light: 浅色模式
-  type: auto
+  type: light
   # After opening, the dark mode will display the starry sky background
   # 开启后深色模式会显示星空背景
-  universe: false
+  universe: ture
 # --------------------------- 显示模式 end ---------------------------
 
 # --------------------------- 字体 start ---------------------------
@@ -410,11 +410,11 @@ lure:
 # Article expiration
 # 文章过期
 expire:
-  enable: false
+  enable: ture
   time: 180 # days
   position: top # top / bottom
-  text_prev: "This article expired "
-  text_next: " day ago, if the content does not match, please contact the webmaster to update it."
+  text_prev: "这篇文章已过 "
+  text_next: " 天，如内容不符，请联系站长更新."
 # --------------------------- 文章过期提醒 end ---------------------------
 
 # --------------------------- 首页文章显示方式 start ---------------------------
@@ -476,7 +476,7 @@ right_menu:
 #  information
 # 显示复制信息
 copy:
-  enable: false
+  enable: ture
   # Turn on Link copyright information after copying.
   # 复制后链接版权信息
   copyright:
@@ -547,18 +547,18 @@ rightside:
 # --------------------------- 页脚 start ---------------------------
 # Footer
 # 页脚
-footer:
+# footer:
   # Information social icon
   # 社交信息图标
-  information:
-    author: https://awtc.pp.ua/1745514532958.png # img url / false
-    left:
-      Github: https://github.com/everfu || fab fa-github # Name: link || icon
-      Mail: mailto:o@everfu.cn || fab fa-envelope
-    right:
-      Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
-      Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
-  group:
+  # information:
+    # author: https://awtc.pp.ua/1745514532958.png # img url / false
+    # left:
+      # Github: https://github.com/everfu || fab fa-github # Name: link || icon
+      # Mail: mailto:o@everfu.cn || fab fa-envelope
+    # right:
+      # Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
+      # Douyin: https://v.douyin.com/iJsLc8jt/ || fab fa-tiktok
+  # group:
     # Navigation:
     #   Archives: /archives/
     #   Categories: /categories/
@@ -740,7 +740,7 @@ OpenGraph:
 # 字数统计
 # warning: Please install the hexo-wordcount plugin first.
 # 警告: 请先安装 hexo-wordcount 插件。
-wordcount: false
+wordcount: true
 # --------------------------- 字数统计 end ---------------------------
 
 # --------------------------- 数学公式 start ---------------------------
@@ -812,13 +812,13 @@ pwa:
 comment:
   # Which commenting system to use(e.g. waline or waline,twikoo)
   # 使用哪个评论系统（例如： waline or waline,twikoo），最多可以开启两个评论系统
-  use: # waline, twikoo, valine, artalk, giscus # Up to two comment systems can be turned on at the same time
+  use: twikoo # waline, twikoo, valine, artalk, giscus # Up to two comment systems can be turned on at the same time
   # Whether to display the hot comment switch.
   # 是否显示热门评论开关
   commentBarrage: true
   # Lazy load
   # 懒加载评论区
-  lazyload: false
+  lazyload: ture
   # Whether to display the comment count
   # 显示评论数
   count: true
@@ -829,7 +829,7 @@ comment:
   # Hot comment tips
   # 热评提示
   hot_tip:
-    enable: false
+    enable: ture
     # Number of hot comments
     count: 3
   # recent comments(⚠️ Comments need to be configured first.)
@@ -840,7 +840,7 @@ comment:
     limit: 5 # 评论数 / Number of comments
 # Twikoo: https://solitude.js.org/comment/twikoo
 twikoo: # https://twikoo.js.org/
-  envId: # url: https://twikoo.sondy.top/
+  envId: https://twikoo.irwei.com/.netlify/functions/twikoo # url: https://twikoo.sondy.top/
   region: # Environment locale, default is ap-shanghai, Tencent cloud environment fill ap-shanghai or ap-guangzhou; Vercel environment do not fill the.
   style: true # Use custom styles when turned on
   accessToken: # AccessToken
