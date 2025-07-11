@@ -1,6 +1,103 @@
 - const not_cover = !(typeof page.not_cover ==='undefined' ? false : page.not_cover)
-header#page-header(class=is_post() && not_cover ? 'post-bg' : 'not-top-img')
+header#page-header(class=(is_post() && not_cover) || is_home() ? 'post-bg' : 'not-top-img')
     include ./nav.pug
+
+    if is_home()
+      //- 【雪花特效画布】
+      #particles-js
+      
+      //- 自定义内容区域
+      .author-info-box#author-info-box
+        .author-avatar
+          img(src="https://awtc.pp.ua/1745514532958.png", alt="author avatar")
+        .author-name 阿伟博客
+        .author-description 阿伟博客欢迎您!
+        .additional-links.hero-social-icons
+          a(href="https://github.com/aw168", target="_blank", rel="noopener", aria-label="Github", title="Github")
+            i.fab.fa-github
+          a(href="https://t.me/your_username", target="_blank", rel="noopener", aria-label="Telegram", title="Telegram")
+            i.fab.fa-telegram-plane
+          a(href="mailto:your_email@example.com", aria-label="Email", title="Email")
+            i.fas.fa-envelope
+      
+      //- 向下滚动箭头
+      a.hero-scroll-down(href="#content-inner")
+        i.fas.fa-chevron-down
+
     if is_post()
         if !page.not_cover
             include ./widgets/post/postMeta.pug
+
+//- 【最终版JS】我们使用了更华丽、更丰富的雪花参数
+if is_home()
+  script.
+    document.addEventListener('DOMContentLoaded', function () {
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 160, // 增加雪花数量，使其更密集
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#ffffff"
+          },
+          "shape": {
+            "type": "circle"
+          },
+          "opacity": {
+            "value": 0.7, // 雪花基础透明度
+            "random": true, // 透明度随机
+            "anim": {
+              "enable": true,
+              "speed": 0.5, // 透明度变化速度
+              "opacity_min": 0.1, // 最小透明度，会有若隐若现的效果
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 3, // 雪花基础大小
+            "random": true, // 大小随机
+            "anim": {
+              "enable": true,
+              "speed": 2, // 大小变化速度
+              "size_min": 0.5, // 最小尺寸
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": false
+          },
+          "move": {
+            "enable": true,
+            "speed": 1.5, // 整体飘落速度
+            "direction": "bottom", // 飘落方向
+            "random": true, // 轨迹随机
+            "straight": false, // 非直线飘落
+            "out_mode": "out", // 飘出画布
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "grab" // 鼠标悬停时有轻微的抓取连线效果
+            },
+            "onclick": {
+              "enable": false
+            },
+            "resize": true
+          }
+        },
+        "retina_detect": true
+      });
+    });

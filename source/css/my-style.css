@@ -1,0 +1,112 @@
+/* ================================== */
+/* 最终首页样式 (V8.0 艺术品版)       */
+/* ================================== */
+
+/* --- 导航栏透明化 --- */
+#header {
+  position: absolute !important; width: 100%;
+  background: transparent !important;
+  transition: background-color .3s ease-in-out;
+  z-index: 1001;
+}
+#header.show {
+  position: fixed; background: var(--efu-background) !important;
+}
+
+/* --- 顶部容器 & 日夜模式遮罩 --- */
+#page-header {
+  height: 60vh !important;
+  display: flex !important; justify-content: center; align-items: center;
+  background-image: url(/img/default.png) !important;
+  background-position: center !important; background-size: cover !important;
+  overflow: hidden; position: relative;
+}
+#page-header::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+  transition: background-color 0.5s ease; z-index: 2; /* 提高z-index，位于雪花之上 */
+}
+[data-theme='dark'] #page-header::before { background-color: rgba(0, 0, 0, 0.4); }
+
+/* --- 自定义内容区域 --- */
+/* --- 自定义内容区域 (最终紧凑版) --- */
+
+.author-info-box {
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+/* 头像样式 */
+.author-avatar img {
+  width: 90px; /* 稍微缩小头像 */
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  margin-bottom: 1px; /* 【关键修改】减小头像与下方标题的距离 */
+}
+.author-avatar img:hover {
+  transform: rotate(360deg);
+}
+
+/* 名字样式 */
+.author-name {
+  font-size: 1.5rem; /* 稍微缩小字体 */
+  font-weight: bold;
+  margin: 0 0 1px 0; /* 【关键修改】减小上下边距 */
+  color: white !important;
+}
+
+/* 描述文字样式 */
+.author-description {
+  font-size: 1rem; /* 稍微缩小字体 */
+  margin-top: 0;
+  margin-bottom: 1px; /* 【关键修改】减小与下方图标的距离 */
+  color: white !important;
+  opacity: 0.9;
+}
+
+/* 社交图标样式 */
+.additional-links.hero-social-icons {
+  display: flex;
+  gap: 18px; /* 图标左右间距 */
+  justify-content: center;
+}
+.additional-links.hero-social-icons a {
+  display: flex; justify-content: center; align-items: center;
+  width: 38px; height: 38px; /* 稍微缩小图标背景 */
+  background-color: rgb(76, 62, 62);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.additional-links.hero-social-icons a:hover {
+  background-color: rgba(7, 162, 229, 0.767);
+  transform: translateY(-3px);
+}
+.additional-links.hero-social-icons i {
+  font-size: 18px; /* 稍微缩小图标 */
+  color: rgb(232, 243, 16);
+}
+
+/* --- 向下箭头和跳转修正 --- */
+.hero-scroll-down {
+  position: absolute; bottom: 25px; left: 50%;
+  transform: translateX(-50%); z-index: 3;
+  font-size: 1.8rem; color: white; opacity: 0.7; cursor: pointer;
+}
+html { scroll-behavior: smooth; }
+#content-inner { scroll-margin-top: 20px; }
+
+/* ================================== */
+/* 【优化一】JS驱动的绝美雪花特效     */
+/* ================================== */
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* 让雪花在背景图之上，但在遮罩层和内容之下 */
+}

@@ -21,7 +21,7 @@ site:
   name:
     class: text # text / i_class / img
     custom: Solitude # Solitude / fas fa-ghost / /img/pwa/favicon.ico
-  icon: https://pan.811520.xyz/2024-10/1728197294016.webp # Site icon / 网站图标
+  icon: https://awtc.pp.ua/1.png # Site icon / 网站图标
 # --------------------------- 网站信息 end ---------------------------
 
 # --------------------------- 导航栏 start ---------------------------
@@ -69,37 +69,37 @@ nav:
 # Home Top Banner
 # 首页顶部
 hometop:
-  enable: true
-  banner:
-    title: 宁静致远 <br> 热爱生活 # Tranquility <br>and love life / 宁静致远 <br> 热爱生活 # Title
-    url: Hexo Theme Solitude
-    icon:
-      HTML: # name
-        img: https://i.postimg.cc/vBWVnY8q/html.png # url
-        color: "#e9572b" # color
-      JS:
-        img: https://i.postimg.cc/3N10Ltv2/js.png
-        color: "#f7cb4f"
-      Docker:
-        img: https://i.postimg.cc/8Pk6Fg24/docker.png
-        color: "#57b6e6"
-      Flutter:
-        img: https://i.postimg.cc/hPC7T3gB/flutter.png
-        color: "#ffffff"
-      WebPack:
-        img: https://i.postimg.cc/dVLZBmtT/webpack.png
-        color: "#2e3a41"
-      Git:
-        img: https://i.postimg.cc/nhgjwjCS/git.png
-        color: "#df5b40"
-  group:
-    热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
-  recommendList:
-    sup: 置顶
-    title: Solitude 官方文档
-    url: https://solitude.js.org/
-    img: https://pan.811520.xyz/2024-10/1728279557702.webp
-    color: "none"
+  enable: false
+  # banner:
+    # title: 宁静致远 <br> 热爱生活 # Tranquility <br>and love life / 宁静致远 <br> 热爱生活 # Title
+    # url: Hexo Theme Solitude
+    # icon:
+      # HTML: # name
+        # img: https://i.postimg.cc/vBWVnY8q/html.png # url
+        # color: "#e9572b" # color
+      # JS:
+        # img: https://i.postimg.cc/3N10Ltv2/js.png
+        # color: "#f7cb4f"
+      # Docker:
+        # img: https://i.postimg.cc/8Pk6Fg24/docker.png
+        # color: "#57b6e6"
+      # Flutter:
+        # img: https://i.postimg.cc/hPC7T3gB/flutter.png
+        # color: "#ffffff"
+      # WebPack:
+        # img: https://i.postimg.cc/dVLZBmtT/webpack.png
+        # color: "#2e3a41"
+      # Git:
+        # img: https://i.postimg.cc/nhgjwjCS/git.png
+        # color: "#df5b40"
+  # group:
+    # 热门: /tags/Fire/ || fas fa-fire || linear-gradient(to right,#f65,#ffbf37)
+  # recommendList:
+    # sup: 置顶
+    # title: Solitude 官方文档
+    # url: https://solitude.js.org/
+    # img: https://pan.811520.xyz/2024-10/1728279557702.webp
+    # color: "none"
 
 # Article Top Banner
 # 文章推荐轮播图
@@ -132,7 +132,7 @@ aside:
   card:
     style: 0 # 0: default 1: style 1 2: style 2
     author:
-      img: https://pan.811520.xyz/2024-10/1728197294016.webp # url
+      img: https://awtc.pp.ua/1745514532958.png # url
       sticker: # url, 24x24 size
     url: /about/ # link / 点击头像跳转链接
     background: # https://s3.qjqq.cn/47/663af296b85f4.webp!color # Background image(Invalid if style is 0)
@@ -157,8 +157,8 @@ aside:
     # social
     # 社交信息图标
     information:
-     Github: https://github.com/everfu || fab fa-github  # Name: link || icon
-     Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
+      Github: https://github.com/everfu || fab fa-github  # Name: link || icon
+      Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
   # --------------------------- 侧边栏 end ---------------------------
 
   # --------------------------- 侧边栏二维码 start ---------------------------
@@ -219,8 +219,8 @@ aside:
     # Website creation time
     # 网站创建时间
     runtimeenable: true
-    # Format: yyyy-MM-dd hh-mm-ss
-    # 格式: yyyy-MM-dd hh-mm-ss
+    # Format: inplace-MM-dd hh-mm-ss
+    # 格式: inplace-MM-dd hh-mm-ss
     runtime: "2023-04-20 00:00:00"
   # --------------------------- 网站信息 end ---------------------------
 # --------------------------- 首页顶部 end ---------------------------
@@ -246,8 +246,7 @@ page:
   default:
     # Default image when no cover is set
     # 未设置封面时的默认图片
-    cover:
-      # - /img/default.png # 默认图片 / default cover
+    cover: https://awtc.pp.ua/2.png
 # --------------------------- 页面默认设置 end ---------------------------
 
 # --------------------------- 文章默认设置 start ---------------------------
@@ -552,7 +551,7 @@ footer:
   # Information social icon
   # 社交信息图标
   information:
-    author: https://pan.811520.xyz/2024-10/1728197294016.webp # img url / false
+    author: https://awtc.pp.ua/1745514532958.png # img url / false
     left:
       Github: https://github.com/everfu || fab fa-github # Name: link || icon
       Mail: mailto:o@everfu.cn || fab fa-envelope
@@ -783,12 +782,14 @@ extends:
   # Insert in head
   # 插入到 head
   head:
-  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+  - <link rel="stylesheet" href="/css/my-style.css">
+  - <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
   # Insert in body
   # 插入到 body
   body:
-  #  - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
+  - <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  # - <script src="https://cdn.bootcdn.net/ajax/libs/pace/1.2.4/pace.min.js"></script>
 # --------------------------- 扩展设置  end ---------------------------
 
 # --------------------------- start ---------------------------
