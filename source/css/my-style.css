@@ -110,3 +110,15 @@ html { scroll-behavior: smooth; }
   height: 100%;
   z-index: 1; /* 让雪花在背景图之上，但在遮罩层和内容之下 */
 }
+
+/* --- 优化：恢复文章内容的文字选中功能 --- */
+
+/* 选中文章的主体内容区域 */
+.article-entry {
+  /* * user-select 是控制用户能否选中文字的属性。
+   * 'text' 或 'auto' 都能恢复正常的选中功能。
+   * !important 用来确保我们的规则优先级最高，能覆盖掉主题自带的设置。
+   */
+  user-select: text !important;
+  -webkit-user-select: text !important; /* 兼容老版本的 Chrome/Safari 浏览器 */
+}
