@@ -1,9 +1,42 @@
+/* ================================================== */
+/* 最终首页样式 (V10.0 - All-in-One 最终修复版) */
+/* ================================================== */
+
 /* ================================== */
-/* 最终首页样式 (V9.0 首页限定版)     */
+/* 全局样式 (所有页面生效)      */
 /* ================================== */
 
-/* 我们在所有选择器前都加上了 body[data-type='solitude'] */
-/* 这确保了以下所有和首页Banner相关的样式，只在首页生效 */
+/* 修正跳转位置 */
+html {
+  scroll-behavior: smooth;
+}
+#content-inner {
+  scroll-margin-top: 20px;
+}
+
+/* 恢复文章内容的文字选中功能 */
+.post-content p,
+.post-content span,
+.post-content li,
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6,
+.post-content table,
+.post-content pre,
+.post-content code {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+
+/* ================================== */
+/* 仅首页生效的样式         */
+/* ================================== */
+
+/* 我们在所有首页相关的选择器前，都加上了 body[data-type='solitude'] */
 
 /* --- 导航栏透明化 & 滚动变色 --- */
 body[data-type='solitude'] #header {
@@ -24,7 +57,7 @@ body[data-type='solitude'] #page-header {
   display: flex !important;
   justify-content: center;
   align-items: center;
-  background-image: url(/img/default.png) !important; /* 【请务必替换为您自己的背景图片路径】 */
+  background-image: url(/img/your-banner.jpg) !important; /* 【请务必替换为您自己的背景图片路径】 */
   background-position: center !important;
   background-size: cover !important;
   overflow: hidden;
@@ -35,7 +68,7 @@ body[data-type='solitude'] #page-header::before {
   position: absolute;
   top: 0; left: 0; width: 100%; height: 100%;
   transition: background-color 0.5s ease;
-  z-index: 2; /* 提高z-index，位于雪花之上 */
+  z-index: 2;
 }
 [data-theme='dark'] #page-header::before {
   background-color: rgba(0, 0, 0, 0.4);
@@ -53,36 +86,48 @@ body[data-type='solitude'] .author-avatar img {
   width: 90px;
   height: 90px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 255, 255, 0.7);
-  margin-bottom: 1px;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
 }
 body[data-type='solitude'] .author-name {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-weight: bold;
-  margin: 0 0 1px 0;
+  margin: 0 0 4px 0;
   color: white !important;
 }
 body[data-type='solitude'] .author-description {
-  font-size: 1rem;
+  font-size: 1.1rem;
   margin-top: 0;
-  margin-bottom: 1px;
+  margin-bottom: 12px;
   color: white !important;
-  opacity: 0.9;
 }
 
-/* 社交图标样式 */
+/* 社交图标UI (圆形背景) */
+body[data-type='solitude'] .additional-links.hero-social-icons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
 body[data-type='solitude'] .additional-links.hero-social-icons a {
-  display: inline-block; /* 改为inline-block以应用边距 */
-  margin: 0 8px; /* 调整图标间距 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+body[data-type='solitude'] .additional-links.hero-social-icons a:hover {
+  transform: translateY(-5px);
 }
 body[data-type='solitude'] .additional-links.hero-social-icons i {
   font-size: 18px;
-  color: white !important; /* 强制为白色 */
+  color: white;
 }
-/* 这里移除了之前复杂的带背景色的图标样式，以匹配您的截图 */
 
-
-/* --- 向下箭头和跳转修正 --- */
+/* --- 向下箭头 --- */
 body[data-type='solitude'] .hero-scroll-down {
   position: absolute;
   bottom: 25px;
@@ -103,33 +148,4 @@ body[data-type='solitude'] #particles-js {
   width: 100%;
   height: 100%;
   z-index: 1;
-}
-
-/* ================================== */
-/* 全局设置 (对所有页面生效)          */
-/* ================================== */
-
-/* --- 修正跳转位置 --- */
-html {
-  scroll-behavior: smooth;
-}
-#content-inner {
-  scroll-margin-top: 20px;
-}
-
-/* --- 恢复文章内容的文字选中功能 (最终版) --- */
-.post-content p,
-.post-content span,
-.post-content li,
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4,
-.post-content h5,
-.post-content h6,
-.post-content table,
-.post-content pre,
-.post-content code {
-  user-select: text !important;
-  -webkit-user-select: text !important;
 }
