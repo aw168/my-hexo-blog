@@ -1,0 +1,43 @@
+# Workflow's name
+name: Deploy Hexo Site
+
+# Workflow's trigger
+on:
+  push:
+    branches:
+      - main
+
+# Workflow's jobs
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checkout your source repository
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Generate static files
+      - name: Generate
+        run: npx hexo generate
+
+      # Deploy to your public repository (aw168.github.io)
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.HEXO_DEPLOY_TOKEN }}
+          external_repository: aw168/aw168.github.io
+          publish_dir: ./public
+          publish_branch: main
+          commit_message: ${{ github.event.head_commit.message }}
