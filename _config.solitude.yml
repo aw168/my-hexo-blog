@@ -328,8 +328,8 @@ post:
       - twitter
       - facebook
       - telegram
-      # - whatsapp
-      # - linkedin
+      - whatsapp
+      - linkedin
       - link
       - qrcode
   rss: /atom.xml # /atom.xml
