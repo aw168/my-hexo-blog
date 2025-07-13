@@ -20,7 +20,7 @@
 site:
   name:
     class: text # text / i_class / img
-    custom: Solitude # Solitude / fas fa-ghost / /img/pwa/favicon.ico
+    custom: Home # Solitude / fas fa-ghost / /img/pwa/favicon.ico
   icon: https://awtc.pp.ua/1.png # Site icon / 网站图标
 # --------------------------- 网站信息 end ---------------------------
 
@@ -157,7 +157,7 @@ aside:
     # social
     # 社交信息图标
     information:
-      Github: https://github.com/everfu || fab fa-github  # Name: link || icon
+      Github: https://github.com/iawooo || fab fa-github  # Name: link || icon
       Bilibili: https://space.bilibili.com/1329819902 || fab fa-bilibili
   # --------------------------- 侧边栏 end ---------------------------
 
@@ -290,7 +290,7 @@ post:
     updated: true
     # Location
     # 位置
-    locate: ture
+    locate: true
     # Number of words
     # 字数
     wordcount: true
@@ -369,7 +369,7 @@ display_mode:
   type: light
   # After opening, the dark mode will display the starry sky background
   # 开启后深色模式会显示星空背景
-  universe: ture
+  universe: true
 # --------------------------- 显示模式 end ---------------------------
 
 # --------------------------- 字体 start ---------------------------
@@ -410,7 +410,7 @@ lure:
 # Article expiration
 # 文章过期
 expire:
-  enable: ture
+  enable: true
   time: 180 # days
   position: top # top / bottom
   text_prev: "这篇文章已过 "
@@ -476,7 +476,7 @@ right_menu:
 #  information
 # 显示复制信息
 copy:
-  enable: ture
+  enable: true
   # Turn on Link copyright information after copying.
   # 复制后链接版权信息
   copyright:
@@ -818,7 +818,8 @@ comment:
   commentBarrage: true
   # Lazy load
   # 懒加载评论区
-  lazyload: ture
+  # 是否懒加载评论区
+  lazyload: true
   # Whether to display the comment count
   # 显示评论数
   count: true
@@ -829,7 +830,7 @@ comment:
   # Hot comment tips
   # 热评提示
   hot_tip:
-    enable: ture
+    enable: true
     # Number of hot comments
     count: 3
   # recent comments(⚠️ Comments need to be configured first.)
@@ -950,7 +951,7 @@ busuanzi_use: 0
 # --------------------------- busuanzi end ---------------------------
 
 # --------------------------- AI start ---------------------------
-# This part is only supported in mainland China, and we will consider supporting ChatGPT Key in the future.
+# This part is only supported in mainland China, and we will consider supporting ChatGPT Key in the futrue.
 # 该部分仅支持中国大陆，后续会考虑支持 ChatGPT Key。
 tianli_talk:
   enable: false
