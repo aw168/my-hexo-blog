@@ -16,11 +16,11 @@ timezone: 'Asia/Shanghai' # 网站时区，Hexo会根据此时区来处理时间
 # -------------------
 ## 如果您的网站部署在自定义域名或GitHub Pages上，请将这里的url改成您的最终网址
 url: http://example.com # 网站的完整网址，对SEO和生成正确的链接很重要
-permalink: p/:slug/ # 文章永久链接的格式。例如: example.com/2025/07/my-post/
+permalink: p/:url_name/ # 文章永久链接的格式。例如: example.com/2025/07/my-post/
 permalink_defaults:     # 永久链接中各部分的默认值
 pretty_urls:
   trailing_index: false # 是否在永久链接中保留结尾的 'index.html'。比如 /about/index.html -> true, /about/ -> false
-  trailing_html: true  # 是否在永久链接中保留结尾的 '.html'。比如 /about.html -> true, /about/ -> false
+  trailing_html: false # 是否在永久链接中保留结尾的 '.html'。比如 /about.html -> true, /about/ -> false
 
 # Directory (目录设置)
 # -------------------
@@ -108,3 +108,11 @@ deploy:
   type: git               # 部署方式。'git' 代表使用Git进行部署
   repository: git@github.com:aw168/aw168.github.io.git # 部署的目标仓库地址
   branch: main            # 部署的目标分支
+
+# Feed Atom (RSS订阅源配置)
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content: true

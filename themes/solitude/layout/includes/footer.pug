@@ -46,7 +46,7 @@ if group
                     button.random-friends-btn(onclick='randomLinksList()', title=_p('footer.randomlink'))
                         i.solitude.fas.fa-arrows-rotate
                 div.footer-links#friend-links-in-footer
-div#footer-bar
+//- div#footer-bar
     div.footer-bar-links
         div.footer-bar-left
             if moment(theme.aside.siteinfo.runtime).year() === new Date().getFullYear()
@@ -95,6 +95,27 @@ div#footer-bar
                             img(src=url_for(item.img), alt=item.name)
                     else
                         a.footer-bar-link(href=url_for(item.url), alt=item.name)!= item.name
-                        
-if theme.comment.use && theme.comment.commentBarrage
-    div.comment-barrage.needEndHide
+
+//- 【最终版页脚结构】
+.perfect-footer
+  //- 第一行：版权信息
+  .copyright-line
+    span © #{theme.aside.siteinfo.runtime ? moment(theme.aside.siteinfo.runtime).year() : '2023'} - #{new Date().getFullYear()} • By
+    //- 【修改一】将作者名字“阿伟”包裹在 a 标签中，使其可以点击跳转到“关于”页面
+    a(href="/about/") #{config.author}
+    a(href="https://github.com/everfu/hexo-theme-solitude", target="_blank", rel="noopener") Theme
+
+  //- 第二行：功能链接按钮
+  .footer-links
+    //- RSS订阅按钮
+    a.footer-link-button(href="/atom.xml", target="_blank")
+      i.fas.fa-rss
+      span RSS订阅
+    //- 站点地图按钮
+    a.footer-link-button(href="/sitemap.xml", target="_blank")
+      i.fas.fa-sitemap
+      span 站点地图
+    //- 【修改二】新增“联系我们”按钮，点击后会打开邮件客户端
+    a.footer-link-button(href="mailto:iawooo@qq.com")
+      i.fas.fa-envelope
+      span 联系我们

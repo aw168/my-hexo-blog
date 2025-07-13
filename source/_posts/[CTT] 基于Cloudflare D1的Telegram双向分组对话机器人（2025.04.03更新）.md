@@ -16,7 +16,7 @@ title: '[CTT] 基于Cloudflare D1的Telegram双向分组对话机器人（2025.0
 updated: '2025-03-25T14:44:55.830+08:00'
 share: true
 cover: https://tc-212.pages.dev/1743001600418.png
-slug: ctt
+url_name: ctt
 ---
 # CFTeleTrans (CTT) - 基于 Cloudflare 的 Telegram 消息转发分组对话机器人 本项目地址：[CFTeleTrans](https://github.com/iawooo/ctt) 欢迎fork 期待star
 
