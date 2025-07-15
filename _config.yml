@@ -15,8 +15,8 @@ timezone: 'Asia/Shanghai' # 网站时区，Hexo会根据此时区来处理时间
 # URL (网址设置)
 # -------------------
 ## 如果您的网站部署在自定义域名或GitHub Pages上，请将这里的url改成您的最终网址
-url: http://example.com # 网站的完整网址，对SEO和生成正确的链接很重要
-permalink: p/:url_name/ # 文章永久链接的格式。例如: example.com/2025/07/my-post/
+url: https://irwei.com # 网站的完整网址，对SEO和生成正确的链接很重要
+permalink: p/:url_name/ # 文章永久链接的格式。例如: irwei.com/2025/07/my-post/
 permalink_defaults:     # 永久链接中各部分的默认值
 pretty_urls:
   trailing_index: false # 是否在永久链接中保留结尾的 'index.html'。比如 /about/index.html -> true, /about/ -> false
@@ -41,7 +41,7 @@ titlecase: false          # 是否将文章标题自动转为大写锁定格式 
 external_link:
   enable: true            # 是否在新标签页中打开外部链接
   field: site             # 应用范围 ('site'代表全站, 'post'代表仅文章内)
-  exclude: ''             # 不应用此规则的域名，比如 'example.com'
+  exclude: ''             # 不应用此规则的域名，比如 'irwei.com'
 filename_case: 0          # 文件名大小写转换 (0: 不转换, 1: 转为小写, 2: 转为大写)
 render_drafts: false      # 是否渲染 `source/_drafts` 目录下的草稿
 post_asset_folder: false  # 是否启用“文章资源文件夹”。开启后，`hexo new post "..."` 会同时创建一个同名文件夹用于存放该文章的图片等资源

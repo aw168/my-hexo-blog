@@ -50,7 +50,7 @@ body[data-type='solitude'] #page-header {
   display: flex !important;
   justify-content: center;
   align-items: center;
-  background-image: url(/img/default.png) !important; /* 【请务必替换为您自己的背景图片路径】 */
+  background-image: url(https://awtc.pp.ua/2.png) !important; /* 【请务必替换为您自己的背景图片路径】 */
   background-position: center !important;
   background-size: cover !important;
   overflow: hidden;
