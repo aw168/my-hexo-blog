@@ -1,5 +1,6 @@
-- const not_cover = !(typeof page.not_cover ==='undefined' ? false : page.not_cover)
-header#page-header(class=(is_post() && not_cover) || is_home() ? 'post-bg' : 'not-top-img')
+//- 雪花特效的画布
+ - const not_cover = !(typeof page.not_cover ==='undefined' ? false : page.not_cover)
+ header#page-header(class=(is_post() && not_cover) || is_home() ? 'post-bg' : 'not-top-img')
     include ./nav.pug
 
     if is_home()
@@ -29,7 +30,7 @@ header#page-header(class=(is_post() && not_cover) || is_home() ? 'post-bg' : 'no
             include ./widgets/post/postMeta.pug
 
 //- 【最终版JS】使用了更精致、更自然的雪花参数
-if is_home()
+ if is_home()
   script.
     document.addEventListener('DOMContentLoaded', function () {
       particlesJS("particles-js", {
