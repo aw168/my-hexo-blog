@@ -43,13 +43,13 @@ nav:
       归档: /archives/ || fas fa-folder-closed # item name: link || icon
       分类: /categories/ || fas fa-clone
       标签: /tags/ || fas fa-tags
-    朋友:
-      朋友圈: /moments/ || fas fa-wifi
-      友人链: /links/ || fas fa-user-group
-      宝藏贴: javascript:travelling() || fas fa-gift
+    # 朋友:
+      # 朋友圈: /moments/ || fas fa-wifi
+      # 友人链: /links/ || fas fa-user-group
+      # 宝藏贴: javascript:travelling() || fas fa-gift
     常用:
       我的装备: /equipment/ || fas fa-laptop
-      在线工具: /tlink/ || fas fa-toolbox
+      # 在线工具: /tlink/ || fas fa-toolbox
       音乐时刻: /music/ || fas fa-music
     关于: /about/
 
@@ -920,7 +920,6 @@ recent_comments:
   limit: 50 # ⚠️waline 仅支持最大50条评论 / ⚠️waline only supports a maximum of 50 comments
   cache: 0.2 # 1 = 1天 / 1 = 1 day
   page: /recentcomments/ # 最近评论页面 / recent comments page
-  img: /img/recent_c.avif # 中控台显示图片（不填不显示） / image displayed in the console
 # --------------------------- 最近评论 end ---------------------------
 
 # --------------------------- busuanzi start ---------------------------

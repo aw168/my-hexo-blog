@@ -1,0 +1,251 @@
+/* ================================== */
+/* 全局基础样式                       */
+/* ================================== */
+
+/* 修正跳转位置 & 恢复文字选中 */
+html {
+  scroll-behavior: smooth;
+}
+#content-inner {
+  scroll-margin-top: 60px;
+}
+.post-content p, .post-content span, .post-content li, .post-content h1, .post-content h2, .post-content h3, .post-content h4, .post-content h5, .post-content h6, .post-content table, .post-content pre, .post-content code {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+
+/* ================================== */
+/* 仅首页生效的样式                   */
+/* ================================== */
+
+/* --- 导航栏 --- */
+body[data-type='solitude'] #header {
+  position: absolute !important;
+  width: 100%;
+  background: transparent !important;
+  transition: background-color .3s ease-in-out;
+  z-index: 1001;
+}
+body[data-type='solitude'] #header.show {
+  position: fixed;
+  background: var(--efu-background) !important;
+}
+
+/* --- 顶部容器 (核心修改区域) --- */
+body[data-type='solitude'] #page-header {
+  /* 基础布局 */
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  width: 100%; /* 确保宽度为100% */
+  
+  /* 【修改一】使用宽高比自适应高度 */
+  aspect-ratio: 1920 / 900; /* 请根据您的图片宽高比调整 */
+  
+  /* 【修改二】增加最大和最小高度限制，优化移动端和超宽屏 */
+  min-height: 280px;      /* 保证在很宽的屏幕上不会变得太扁 */
+  max-height: 60vh;       /* 关键！限制其最大高度不超过视窗的85%，防止占满手机屏幕 */
+
+  /* 背景图设置 */
+  background-image: url(/img/default.png) !important;
+  background-position: center !important;
+  background-size: cover !important; /* 此处建议用 cover，配合 aspect-ratio 和 max-height 效果更好 */
+  background-repeat: no-repeat;
+}
+
+/* 遮罩层 */
+body[data-type='solitude'] #page-header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  transition: background-color 0.5s ease;
+  z-index: 2;
+}
+[data-theme='dark'] #page-header::before {
+  background-color: rgba(0, 0, 0, 0.37);
+}
+
+/* --- 顶部自定义内容区域 --- */
+body[data-type='solitude'] .author-info-box {
+  position: relative;
+  z-index: 3;
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  padding: 0 15px; /* 在手机上给左右留出一点边距 */
+}
+body[data-type='solitude'] .author-avatar img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid rgba(231, 8, 8, 0.244);
+  margin-bottom: 8px;
+  transition: all 0.3s ease; /* 增加过渡动画 */
+}
+body[data-type='solitude'] .author-name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 0 1px 0;
+  color: white !important;
+  transition: all 0.3s ease; /* 增加过渡动画 */
+}
+body[data-type='solitude'] .author-description {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 1px;
+  color: white !important;
+  transition: all 0.3s ease; /* 增加过渡动画 */
+}
+
+/* 社交图标UI */
+body[data-type='solitude'] .additional-links.hero-social-icons {
+  display: flex;
+  gap: 12px; /* 【修改】水平间距从 15px 减小到 12px */
+  justify-content: center;
+  margin-top: 8px; /* 【修改】与上方描述的垂直间距从 10px 减小到 8px */
+}
+body[data-type='solitude'] .additional-links.hero-social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px; /* 默认尺寸调小一点 */
+  height: 50px;
+  background-color: rgba(6, 201, 235, 0);
+  backdrop-filter: blur(5px);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+body[data-type='solitude'] .additional-links.hero-social-icons a:hover {
+  transform: translateY(-5px);
+}
+body[data-type='solitude'] .additional-links.hero-social-icons i {
+  font-size: 18px;
+  color: white;
+}
+
+/* --- 向下箭头 & 动画 --- */
+body[data-type='solitude'] .hero-scroll-down {
+  position: absolute;
+  bottom: 15px; /* 【修改】将箭头更贴近底部，视觉上离图标更近 */
+  /* ... 其他样式保持不变 ... */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  font-size: 1.8rem;
+  color: white;
+  opacity: 0.7;
+  cursor: pointer;
+  animation: bounce 2s infinite !important;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+  40% { transform: translateX(-50%) translateY(-15px); }
+  60% { transform: translateX(-50%) translateY(-7px); }
+}
+
+/* --- 其他 --- */
+body[data-type='solitude'] #particles-js {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;
+}
+
+/* =================================================================== */
+@media (max-width: 768px) {
+
+  /* --- 步骤一：确保容器有足够空间 --- */
+  body[data-type='solitude'] #page-header {
+    padding-bottom: 50px !important; 
+  }
+
+  /* --- 步骤二：用 gap 属性作为间距的总开关 --- */
+  body[data-type='solitude'] #page-header .author-info-box {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    
+    /* * 【间距总开关】
+     * 现在，这里是控制所有项目之间基础间距的唯一地方。
+     * 您可以改成 15px, 20px, 10px 等任意您觉得合适的数值。
+     */
+    gap: 0px !important; 
+  }
+
+  /* --- 步骤三：清空子元素的默认边距，防止干扰 --- */
+  body[data-type='solitude'] #page-header .author-avatar,
+  body[data-type='solitude'] #page-header .author-name,
+  body[data-type='solitude'] #page-header .author-description,
+  body[data-type='solitude'] #page-header .additional-links {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* --- 步骤四：精确控制每个元素自身的大小和行高 --- */
+  
+  /* 1. 头像尺寸 */
+  body[data-type='solitude'] #page-header .author-avatar img {
+    width: 80px !important;
+    height: 80px !important;
+  }
+
+  /* 2. 标题“阿伟博客”的样式 */
+  body[data-type='solitude'] #page-header .author-name {
+    font-size: 1.6rem !important;
+    /* 【核心】减小文字自身的“行高”，让它不那么占地方。1.2倍是比较紧凑且易读的行高。 */
+    line-height: 1.2 !important; 
+  }
+
+  /* 3. 描述“阿伟博客欢迎您”的样式 */
+  body[data-type='solitude'] #page-header .author-description {
+    font-size: 0.9rem !important;
+    /* 【核心】同样减小它的“行高”，让它自己的高度降下来。 */
+    line-height: 1.3 !important;
+  }
+  
+  /* 4. 社交图标大小 */
+  body[data-type='solitude'] #page-header .additional-links.hero-social-icons a {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  body[data-type='solitude'] #page-header .additional-links.hero-social-icons i {
+    font-size: 16px !important;
+  }
+
+}
+  
+  /* 调整箭头 */
+  body[data-type='solitude'] .hero-scroll-down {
+    font-size: 1.5rem;
+    bottom: 1px;
+  }
+
+/* 页脚样式 */
+.perfect-footer {
+  text-align: center; padding: 0.5rem 0.1rem; background-color: var(--efu-card-bg); border-top: 1px solid var(--efu-border-color); color: var(--efu-font-color);
+}
+.copyright-line {
+  font-size: 0.9rem; color: var(--efu-gray); margin-bottom: 0.5rem;
+}
+.copyright-line span:not(:first-child)::before, .copyright-line a::before {
+  content: '•'; margin: 0 0.75rem;
+}
+.copyright-line a {
+  color: var(--efu-gray); text-decoration: none; transition: color 0.5s ease;
+}
+.copyright-line a:hover {
+  color: var(--efu-main);
+}
+.footer-links {
+  display: flex; justify-content: center; gap: 12px; margin-bottom: 1rem;
+}
+.footer-link-button {
+  display: inline-flex; align-items: center; padding: 6px 15px; background-color: var(--efu-background); border-radius: 50px; color: var(--efu-font-color); text-decoration: none; border: 1px solid var(--efu-border-color); transition: all 0.3s ease;
+}
+.footer-link-button:hover {
+  border-color: var(--efu-main); color: var(--efu-main); box-shadow: 0 0 10px var(--efu-main-op);
+}
+.footer-link-button i {
+  margin-right: 6px;
+}
