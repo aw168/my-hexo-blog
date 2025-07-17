@@ -39,7 +39,7 @@ toc_style_simple: null
 top: null
 top_group_index: 10
 top_img: null
-updated: '2025-04-16T23:05:48.583+08:00'
+updated: '2025-07-17T23:16:16.786+08:00'
 url_name: cftc
 ---
 # [cftc](https://github.com/iawooo/cftc/) 支持telegram机器人管理和网页管理文件（包括上传，删除，分类，修改后缀等功能）
