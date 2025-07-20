@@ -39,14 +39,14 @@ toc_style_simple: null
 top: null
 top_group_index: 10
 top_img: null
-updated: '2025-07-17T23:16:16.786+08:00'
+updated: '2025-07-20T15:47:41.944+08:00'
 url_name: cftc
 ---
 # [cftc](https://github.com/iawooo/cftc/) 支持telegram机器人管理和网页管理文件（包括上传，删除，分类，修改后缀等功能）
 
 ## [cftc](https://github.com/iawooo/cftc/) 支持R2 telegram存储，多多star后期可能会跟进B2 S3等存储
 
-# 项目地址：https://github.com/iawooo/cftc/ 感谢你们的star助力孩子圆梦论坛鸡
+# 项目地址：https://github.com/iawooo/cftc/ 感谢你们的star
 
 ## 📸 截图
 
